@@ -84,6 +84,7 @@ jobs:
         script: |
           cd ${{ secrets.PATH }}
           ls
+          git checkout main
           git pull
           ls
           docker stop home-site-test
