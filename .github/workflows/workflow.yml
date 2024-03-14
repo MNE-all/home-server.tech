@@ -68,7 +68,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/home-site:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/home-site:test
   
   deploy-to-remote-server:
     needs: publish-docker-image
@@ -89,6 +89,6 @@ jobs:
           ls
           docker stop home-site-test
           docker rm home-site-test
-          docker run --name home-site-test -dp 80:80 dockermne/home-site:latest
+          docker run --name home-site-test -dp 80:80 dockermne/home-site:test
             
     
