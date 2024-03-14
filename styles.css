@@ -8,5 +8,9 @@ footer {
     position: fixed;
     bottom: 10px;
     right: 10px;
-    background-color: #e7f3ef;
+    fill: #e7f3ef;
+}
+
+a {
+    color: darkcyan;
 }
