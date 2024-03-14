@@ -66,9 +66,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: .
-          file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/home-site:test
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/home-site:latest
   
   deploy-to-remote-server:
     needs: publish-docker-image
@@ -89,6 +88,6 @@ jobs:
           ls
           docker stop home-site-test
           docker rm home-site-test
-          docker run --name home-site-test -dp 80:80 dockermne/home-site:test
+          docker run --name home-site-test -dp 80:80 dockermne/home-site:latest
             
     
