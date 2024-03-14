@@ -59,11 +59,12 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd ${{ secrets.PATH }}
+          sudo su - root
+          ${{ secrets.PASSWORD }}
           ls
           git pull
           ls
           sudo docker build -t home-site-image .
-          ${{ secrets.PASSWORD }}
           sudo docker run --name home-site-ci-cd -d -p 4044:80 home-site-image
 
             
