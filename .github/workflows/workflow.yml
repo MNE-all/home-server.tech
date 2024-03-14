@@ -59,7 +59,6 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd ${{ secrets.PATH }}
-          sudo -S su - root && ${{ secrets.PASSWORD }}
           ls
           git pull
           ls
