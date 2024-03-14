@@ -60,7 +60,7 @@ jobs:
         script: |
           cd ${{ secrets.PATH }}
           ls
-          git clone https://github.com/MNE-all/home-server.tech.git
+          git pull
           ls
             
     
