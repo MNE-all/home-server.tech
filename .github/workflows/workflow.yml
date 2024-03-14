@@ -58,7 +58,7 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-          cd source/site
+          cd ${{ secrets.PATH }}
           ls
             
     
