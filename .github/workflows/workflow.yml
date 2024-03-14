@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: CI/CD
 
 # Controls when the workflow will run
 on:
@@ -71,6 +71,7 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/home-site:latest
   
   deploy-to-remote-server:
+    needs: publish-docker-image
     name: DeployBySSH
     runs-on: ubuntu-latest
     steps:
@@ -86,5 +87,8 @@ jobs:
           ls
           git pull
           ls
+          docker stop home-site-test
+          docker rm home-site-test
+          docker run --name home-site-test -dp 80:80 dockermne/home-site:latest
             
     
