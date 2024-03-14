@@ -83,10 +83,7 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd ${{ secrets.PATH }}
-          ls
-          git checkout main
           git pull
-          ls
           docker stop home-site-test
           docker rm home-site-test
           docker image pull dockermne/home-site:latest
