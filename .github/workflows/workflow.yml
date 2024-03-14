@@ -64,8 +64,8 @@ jobs:
           ls
           git pull
           ls
-          sudo docker build -t home-site-image .
-          sudo docker run --name home-site-ci-cd -d -p 4044:80 home-site-image
+          docker build -t home-site-image .
+          docker run --name home-site-ci-cd -d -p 4044:80 home-site-image
 
             
     
