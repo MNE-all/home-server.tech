@@ -50,7 +50,7 @@ jobs:
     name: DeployBySSH
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
+    - name: SSH git clone
       uses: appleboy/ssh-action@v1.0.3
       with:
         host: ${{ secrets.HOST }}
@@ -59,6 +59,8 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
           cd ${{ secrets.PATH }}
+          ls
+          git clone https://github.com/MNE-all/home-server.tech.git
           ls
             
     
